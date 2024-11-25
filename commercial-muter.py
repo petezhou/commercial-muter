@@ -9,9 +9,7 @@ from spotipy.oauth2 import SpotifyOAuth
 
 
 def send_roku_command(command):
-    roku_ip = '10.88.111.12'
-
-    url = f'http://{roku_ip}:8060/keypress/{command}'
+    url = f'http://{ROKU_IP}:8060/keypress/{command}'
     response = requests.post(url)
     if response.status_code != 200:
         print(f"Failed to send Mute/Unmute command. Status code: {response.status_code}")
@@ -44,6 +42,7 @@ MATCH_TEMPLATE_PATH = os.environ["MATCH_TEMPLATE_PATH"]
 MATCH_THRESHOLD = float(os.environ["MATCH_THRESHOLD"])
 MUTE_DELAY = float(os.environ["MUTE_DELAY"])
 DEVICE_ID = os.environ["DEVICE_ID"]
+ROKU_IP = os.environ["ROKU_IP"]
 
 if SPOTIFY_ENABLED:
     scope = "user-library-read,user-read-playback-state,user-modify-playback-state,user-top-read"
