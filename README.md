@@ -1,6 +1,6 @@
 # Commercial Muter
 
-Mutes the TV when the game is in commercial. Optionally play music from Spoitfy when TV is muted.
+Mutes a Roku TV when the game is in commercial. Optionally play music from Spoitfy when TV is muted.
 
 ## Runbook
 1) `vim run-commercial-muter.sh`
